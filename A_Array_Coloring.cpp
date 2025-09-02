@@ -6,7 +6,7 @@ int main(){
     while(t--){
         int n;
         cin>>n;
-        int count =0;
+        int count=0;
         vector<int>a(n);
         for(auto it:a) cin>>a[it];
         for(auto it: a){
