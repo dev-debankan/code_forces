@@ -1,0 +1,17 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+    
+        int n; cin>>n;
+        vector<int>a(n);
+        for(int i=0;i<n;++i) cin>>a[i];
+        int m=0;
+        for(int i=0;i<n;i++){
+            m=max(m,a[i]);
+        }
+        int total=0;
+        for(int i=0;i<n;i++){
+            total=total+m-a[i];
+        }
+        cout<<total<<"\n";
+    }

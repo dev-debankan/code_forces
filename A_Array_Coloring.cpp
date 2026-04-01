@@ -1,19 +1,32 @@
-#include <bits/stdc++.h>
+#include<iostream>
+#include<vector>
 using namespace std;
-int main() {
+int main(){
     int t;
-    cin >> t;
-    while (t--) {
+    cin>>t;
+    while(t--){
         int n;
-        cin >> n;
-        int count = 0;
+        cin>>n;
         vector<int> a(n);
-        for (int i = 0; i < n; ++i) cin >> a[i];
-        for (int it : a) {
-            if (it % 2 != 0) count += it;
+        vector<int> index(n+1);
+        for(int i=0;i<n;i++){
+            cin>>a[i];
+            index[a[i]]=i;
         }
-        if (count % 2 == 0) cout << "YES" << endl;
-        else cout << "NO" << endl;
+        int count=0;
+         for (int x=1;x<n;x++) {
+            if (abs(index[x]-index[x+1]) % 2 == 0) {
+            count++; 
+            }
+        }
+        if(count>0){
+            cout<<"NO"<<endl;
+        }
+        else{
+            cout<<"YES"<<endl;
+        }
+        
     }
+    
     return 0;
 }
